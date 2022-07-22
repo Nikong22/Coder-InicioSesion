@@ -29,7 +29,7 @@ const cookieParser = require('cookie-parser');
 app.use(cookieParser("clave-secreta"));
 app.use(session({
   store: MongoStore.create({
-    mongoUrl: 'mongodb+srv://nikong:nikong22!@cluster0.z6il9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+    mongoUrl: 'mongodb+srv://nikong:nikong22!@cluster0.z6il9.mongodb.net/?retryWrites=true&w=majority',
     mongoOptions: advancedOptions
   }),
   secret: 'secreto',
