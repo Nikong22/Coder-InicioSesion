@@ -11,7 +11,7 @@ const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 const routes_controller = require('./routes/controllers/productos.controller');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const routes = require('./routes'); 
+const route = require('./route'); 
 const {obtenerUsuario, obtenerUsuarioId, passwordValida} = require('./utils/util');
 const bCrypt = require('bCrypt');
 
