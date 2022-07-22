@@ -9,11 +9,17 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 const routes_controller = require('./routes/controllers/productos.controller');
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const routes = require('./routes'); 
+const {obtenerUsuario, obtenerUsuarioId, passwordValida} = require('./utils/util');
+const bCrypt = require('bCrypt');
 
 const app = express();
 const PORT = 8080;
 const http = require("http").Server(app);
 const io = require('socket.io')(http);
+const usuarios = [];
 
 app.use(express.static("public"));
 app.use(express.json());
